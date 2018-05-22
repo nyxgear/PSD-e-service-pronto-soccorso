@@ -1,7 +1,18 @@
 from flask import Flask, request, json, jsonify
 
+import config
+from auth import login_manager
+
+# App instantiated
 app = Flask(__name__)
 
+# Set secret key
+app.secret_key = config.SECRET_KEY
+
+# Login manager bound
+login_manager.init_app(app)
+
+from auth import api
 
 @app.route('/')
 def index():
