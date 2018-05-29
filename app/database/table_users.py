@@ -1,10 +1,14 @@
-users = {
-	1: {
+table = [
+	{
+		'id': 1,
 		'name': 'Antonella',
+		'email': 'test@email.com',
 		'surname': 'Sabatelli'
 	},
-	2: {
+	{
+		'id': 2,
 		'name': 'Stefano',
+		'email': 'test2@email.com',
 		'surname': 'Cilloni'
 	}
-}
+]

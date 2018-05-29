@@ -1,9 +1,13 @@
+from .table_users import table
+
 
 class User:
-	user = {}
+	_table = table
+
+	user_d = {}
 
 	def __init__(self, user_dict):
-		self.user = user_dict
+		self.user_d = user_dict
 
 	def is_authenticated(self):
 		return False
@@ -15,5 +19,4 @@ class User:
 		return False
 
 	def get_id(self):
-		return False
-
+		return self.user_d.get('id')
