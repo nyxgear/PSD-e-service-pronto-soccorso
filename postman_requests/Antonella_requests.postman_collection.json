@@ -1,0 +1,31 @@
+{
+	"info": {
+		"_postman_id": "033651c7-874e-4359-82fc-8c75a0bba709",
+		"name": "Antonella_requests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:5000/informazioni/istruzioni-attesa-ambulanza",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:5000/informazioni/istruzioni-attesa-ambulanza",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"informazioni",
+						"istruzioni-attesa-ambulanza"
+					]
+				},
+				"description": "Istruzioni cosa fare in attensa di ambulanza"
+			},
+			"response": []
+		}
+	]
+}
