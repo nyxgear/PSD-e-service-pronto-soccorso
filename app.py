@@ -1,39 +1,34 @@
-from flask import Flask, request, json, jsonify
+import os, sys
+from flask import Flask, g, request, url_for
 
 import config
-from auth import login_manager
+import database
+import auth
+import urls
 
-# App instantiated
-app = Flask(__name__)
+print(sys.path)
 
-# Set secret key
+app = Flask(__name__, static_url_path='')
+app.debug = config.DEBUG
 app.secret_key = config.SECRET_KEY
 
-# Login manager bound
-login_manager.init_app(app)
-
-from auth import api
-
-@app.route('/')
-def index():
-	return 'Index Page'
+#Auth
+auth.login_manager.setup_app(app)
 
 
-@app.route('/hello')
-def hello():
-	return 'Hello, World'
+@app.context_processor
+def inject_custom():
+	d = { 'SITE_TITLE': config.SITE_TITLE }
+	return d
+
+for (mount_position, mount_module) in urls.mounts:
+	app.register_blueprint(mount_module.bp, url_prefix=mount_position)
 
 
-@app.route('/post/<int:post_id>')
-def show_post(post_id):
-	# show the post with the given id, the id is an integer
-	return 'Post %d' % post_id
+# On IBM Cloud Cloud Foundry, get the port number from the environment variable PORT
+# When running this app on the local machine, default the port to 8000
+port = int(os.getenv('PORT', 5000))
 
 
-@app.route('/requests/<int:request_id>', methods=['POST'])
-def post_requests(request_id):
-	body_request = json.loads(request.data)
-
-	print ('ANTONELLLA MANNAGGGGGGGIA')
-
-	return jsonify(body_request)
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=port)

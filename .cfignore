@@ -1,6 +1,10 @@
+.git
+venv
+doc
 .gitignore
 LICENSE
 README.md
 activate-venv.sh
 run-dev.sh
 README.md
+__pycache__

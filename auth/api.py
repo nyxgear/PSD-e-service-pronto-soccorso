@@ -1,13 +1,14 @@
 import flask
+from flask.blueprints import Blueprint
 from flask_login import login_user
 from pprint import pprint
 
-from app import app
 from database import users
 from database.User import User
 
+bp = Blueprint('auth', __name__)
 
-@app.route('/auth/login/<int:id>', methods=['POST'])
+@bp.route('/login/<int:id>', methods=['POST'])
 def login(id):
 	# Login and validate the user.
 	# user should be an instance of your `User` class
@@ -22,4 +23,4 @@ def login(id):
 
 	next = flask.request.args.get('next')
 
-	return flask.redirect(next or flask.url_for('index'))
+	return flask.redirect(next or flask.url_for('home.index'))
