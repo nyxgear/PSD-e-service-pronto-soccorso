@@ -1,0 +1,35 @@
+{
+	"info": {
+		"_postman_id": "c335fe24-7afe-4871-857e-7d594aeef5f2",
+		"name": "PSD e-Service Pronto Soccorso project",
+		"description": "Collection of request to the created API of e-Service Pronto Soccorso project.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:5000/auth/login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:5000/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"auth",
+						"login"
+					]
+				},
+				"description": "Login"
+			},
+			"response": []
+		}
+	]
+}
