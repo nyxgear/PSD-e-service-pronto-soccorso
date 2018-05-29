@@ -1,4 +1,5 @@
 from .user import User
+from .pronto_soccorso import ProntoSoccorso
 
 
 def get(entity_class, attribute_name, attribute_value):
