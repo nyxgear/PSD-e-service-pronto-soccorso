@@ -11,7 +11,7 @@ app.debug = config.DEBUG
 app.secret_key = config.SECRET_KEY
 
 # Auth
-auth.login_manager.setup_app(app)
+auth.login_manager.init_app(app)
 
 
 @app.context_processor

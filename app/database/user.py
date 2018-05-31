@@ -1,13 +1,25 @@
 from .tables.users import table
 
+from hashlib import sha512
+
 
 class User:
 	_table = table
 
-	user_d = {}
-
 	def __init__(self, user_dict):
-		self.user_d = user_dict
+		self.id = user_dict.get('id')
+		self.email = user_dict.get('email')
+		self.salt = user_dict.get('salt')
+		self.password = user_dict.get('password')
+
+	# def __init__(self, id, email, salt, password):
+	# 	self.id = id
+	# 	self.email = email
+	# 	self.salt = salt
+	# 	self.password = password
+
+	def __repr__(self):
+		return 'User<id={}, email={}>'.format(self.id, self.email)
 
 	def is_authenticated(self):
 		return False
@@ -19,4 +31,27 @@ class User:
 		return False
 
 	def get_id(self):
-		return self.user_d.get('id')
+		return self.id
+
+	@property
+	def password(self):
+		return None
+
+	@password.setter
+	def password(self, v):
+		hash = sha512()
+		hash.update(('-%s-%s-' % (self.salt, v)).encode('utf-8'))
+		self._password = hash.hexdigest()
+
+	def is_valid_password(self, check_password):
+		""""
+		Check if the provided password is valid for the user.
+		"""
+		if not self.salt:
+			return False
+
+		ck_hash = sha512()
+		ck_hash.update(('-%s-%s-' % (self.salt, check_password)).encode('utf-8'))
+		ck_hash_password = ck_hash.hexdigest()
+
+		return self._password == ck_hash_password

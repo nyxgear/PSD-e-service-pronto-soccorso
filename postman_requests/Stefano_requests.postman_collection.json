@@ -1,35 +1,106 @@
 {
 	"info": {
-		"_postman_id": "c335fe24-7afe-4871-857e-7d594aeef5f2",
+		"_postman_id": "abfddb61-fa42-4d64-8105-97a82ba73207",
 		"name": "Stefano_requests",
 		"description": "Collection of request to the created API of e-Service Pronto Soccorso project.",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "http://localhost:5000/auth/login",
-			"request": {
-				"auth": {
-					"type": "noauth"
+			"name": "Login",
+			"description": "",
+			"item": [
+				{
+					"name": "Login Antonella",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "antonella.sabatelli@mail.polimi.it",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "antonella",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5000/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
 				},
-				"method": "POST",
-				"header": [],
-				"body": {},
-				"url": {
-					"raw": "http://localhost:5000/auth/login",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "5000",
-					"path": [
-						"auth",
-						"login"
-					]
-				},
-				"description": "Login"
-			},
-			"response": []
+				{
+					"name": "Login Stefano",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "stefano.cilloni@mail.polimi.it",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "stefano",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5000/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }

@@ -3,6 +3,7 @@ import database as db
 
 login_manager = LoginManager()
 
+
 @login_manager.user_loader
 def load_user(user_id):
-    return db.get(db.User, 'id', user_id)
+	return db.get(db.User, 'id', user_id)

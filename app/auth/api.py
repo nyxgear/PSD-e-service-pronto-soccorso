@@ -1,26 +1,34 @@
-from flask import request, jsonify
+from flask import request, jsonify, abort
 from flask.blueprints import Blueprint
-from pprint import pprint
 
+import database as db
+from flask_login import login_user
 
 bp = Blueprint('auth', __name__)
 
 
 @bp.route('/login', methods=['POST'])
 def login():
-	credentials = request.json
+	res = {'status': 'ERROR', 'message': 'Invalid user or password'}
 
-	# Login and validate the user.
-	# # user should be an instance of your `User` class
-	# user_dict = users.get(id)
-	#
-	# user = User(user_dict)
-	#
-	# login_user(user)
-	#
-	# print('User logged in successfully.')
-	# pprint(user_dict)
-	#
-	# next = flask.request.args.get('next')
+	email = request.form.get('email')
+	password = request.form.get('password')
 
-	return jsonify(credentials)
+	# not valid parameters or malformed request
+	if not email or not password:
+		abort(400)
+
+	user = db.get(db.User, "email", email)
+
+	if not user:
+		return jsonify(res)
+
+	if not user.is_valid_password(password):
+		return jsonify(res)
+
+	# set the current logged in user to flask_login
+	login_user(user)
+	res['status'] = 'SUCCESS'
+	res['message'] = 'Login successfully done'
+
+	return jsonify(res)
