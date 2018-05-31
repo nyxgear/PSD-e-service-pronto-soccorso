@@ -101,6 +101,36 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "pratiche",
+			"description": "",
+			"item": [
+				{
+					"name": "pratiche",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:5000/pratiche",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"pratiche"
+							]
+						},
+						"description": "Lista pratiche assistenza"
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }

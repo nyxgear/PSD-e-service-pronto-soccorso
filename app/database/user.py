@@ -7,19 +7,13 @@ class User:
 	_table = table
 
 	def __init__(self, user_dict):
-		self.id = user_dict.get('id')
+		self.id_ = user_dict.get('id_')
 		self.email = user_dict.get('email')
 		self.salt = user_dict.get('salt')
 		self.password = user_dict.get('password')
 
-	# def __init__(self, id, email, salt, password):
-	# 	self.id = id
-	# 	self.email = email
-	# 	self.salt = salt
-	# 	self.password = password
-
 	def __repr__(self):
-		return 'User<id={}, email={}>'.format(self.id, self.email)
+		return 'User<id={}, email={}>'.format(self.id_, self.email)
 
 	def is_authenticated(self):
 		return False
@@ -31,7 +25,7 @@ class User:
 		return False
 
 	def get_id(self):
-		return self.id
+		return self.id_
 
 	@property
 	def password(self):

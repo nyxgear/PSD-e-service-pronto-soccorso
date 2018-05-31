@@ -24,11 +24,3 @@ def attesa_ambulanza():
 def pronto_soccorsi():
 	ps_list = [c.to_dict() for c in db.get_list(db.ProntoSoccorso)]
 	return jsonify(results=ps_list)
-
-
-#@login_required
-@bp.route('/pratiche-assistenza', methods=['GET'])
-def pratiche_assistenza():
-	pa_list = [c.to_dict() for c in db.get_list(db.PraticaAssistenza)]
-	#pa_list = [c.to_dict() for c in db.get(db.PraticaAssistenza, 'user_id', )]
-	return jsonify(results=pa_list)
