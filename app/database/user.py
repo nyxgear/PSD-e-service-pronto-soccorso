@@ -1,4 +1,4 @@
-from .table_users import table
+from .tables.users import table
 
 
 class User:

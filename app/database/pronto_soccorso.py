@@ -1,4 +1,4 @@
-from .table_pronto_soccorsi import table
+from .tables.pronto_soccorsi import table
 
 from pprint import pprint
 
