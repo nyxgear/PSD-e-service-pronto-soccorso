@@ -1,9 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from .user import User
-from .pronto_soccorso import ProntoSoccorso
-from .pratica_assistenza import PraticaAssistenza
-from .richiesta_soccorso import RichiestaSoccorso
+from .ambulanza import Ambulanza
 
 
 def get(entity_class, attribute_name, attribute_value):
