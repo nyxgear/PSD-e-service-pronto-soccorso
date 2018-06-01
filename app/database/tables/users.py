@@ -1,9 +1,11 @@
+# -*- coding: utf-8 -*-
+
 table = [
 	{
 		'id_': 1,
 		'name': 'Antonella',
 		'email': 'antonella.sabatelli@mail.polimi.it',
-		'salt': 'randomvalue12312daà97èplsa',
+		'salt': 'randomvalue!12312?^sa',
 		'password': 'antonella'
 	},
 	{

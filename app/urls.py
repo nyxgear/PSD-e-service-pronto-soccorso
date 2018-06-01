@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 # public site imports
 # import section.views / admin
 import auth.api

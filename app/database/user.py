@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from .tables.users import table
 
 from hashlib import sha512

@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from flask import jsonify, json, request
 from flask.blueprints import Blueprint
 

@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from .user import User
 from .pronto_soccorso import ProntoSoccorso
 from .pratica_assistenza import PraticaAssistenza

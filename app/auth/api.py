@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from flask import request, jsonify, abort
 from flask.blueprints import Blueprint
 

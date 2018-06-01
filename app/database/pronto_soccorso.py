@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from .tables.pronto_soccorsi import table
 
 class ProntoSoccorso:
