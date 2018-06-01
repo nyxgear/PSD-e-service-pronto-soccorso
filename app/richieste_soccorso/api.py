@@ -6,6 +6,8 @@ from flask.blueprints import Blueprint
 import database as db
 from flask_login import login_required, current_user
 
+import es_gestione_ambulanze.api as ga_api
+
 bp = Blueprint('richieste-soccorso', __name__)
 
 
@@ -21,17 +23,23 @@ def richieste_soccorso():
 
     return jsonify(results=rs)
 
+@bp.route('/', methods=['POST'])
+@login_required
+def richiesta_soccorso():
+    # TODO
+    return ''
+
 
 @bp.route('/<int:request_id>/stato-ambulanza', methods=['GET'])
 @login_required
 def stato_ambulanza(request_id):
-    # pa_list = [c.to_dict() for c in
-    #            db.get_list(db.PraticaAssistenza, 'user_id', 1)]
+    # # pa_list = [c.to_dict() for c in
+    # #            db.get_list(db.PraticaAssistenza, 'user_id', 1)]
+    #
+    # sa_list = []
+    # for c in db.get_list(db.Ambulanza, 'user_id', current_user.get_id()):
+    #    sa_list.append(c.to_dict())
 
-    sa_list = []
-    for c in db.get_list(db.Ambulanza, 'user_id', current_user.get_id()):
-       sa_list.append(c.to_dict())
+    ga_api.stato_ambulanza(1)
 
-
-
-    return jsonify(results=sa_list)
+    return jsonify(results='ok')

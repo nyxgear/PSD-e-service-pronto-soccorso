@@ -1,6 +1,9 @@
 # -*- coding: utf-8 -*-
 
-import .database as db
+import es_gestione_ambulanze.database as db
+
 
 def stato_ambulanza(request_id):
-    db.get()
+    print(dir(db))
+
+    return True
