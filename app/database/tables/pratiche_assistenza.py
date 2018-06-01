@@ -22,7 +22,7 @@ table = [
         'ricetta': 'None'
     },
     {
-        'id_': 2,
+        'id_': 3,
         'user_id': 2,
         'data': '12/03/2018',
         'pronto_soccorso': 'Fatebenefratelli',

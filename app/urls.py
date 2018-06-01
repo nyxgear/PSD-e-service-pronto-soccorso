@@ -6,6 +6,7 @@ import auth.api
 import home.api
 import informazioni.api
 import pratiche.api
+import richieste_soccorso.api
 
 mounts = [
 	('/', home.api),
@@ -13,5 +14,8 @@ mounts = [
 	('/auth', auth.api),
 
 	('/informazioni', informazioni.api),
-	('/pratiche', pratiche.api)
+
+	('/pratiche', pratiche.api),
+
+	('/richieste-soccorso', richieste_soccorso.api)
 ]

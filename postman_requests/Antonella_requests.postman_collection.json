@@ -6,26 +6,108 @@
 	},
 	"item": [
 		{
-			"name": "http://localhost:5000/informazioni/istruzioni-attesa-ambulanza",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"body": {},
-				"url": {
-					"raw": "http://localhost:5000/informazioni/istruzioni-attesa-ambulanza",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "5000",
-					"path": [
-						"informazioni",
-						"istruzioni-attesa-ambulanza"
-					]
+			"name": "pratiche",
+			"description": "",
+			"item": [
+				{
+					"name": "Lista pratiche assistenza",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:5000/informazioni/pratiche-assistenza",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"informazioni",
+								"pratiche-assistenza"
+							]
+						},
+						"description": "Istruzioni cosa fare in attensa di ambulanza"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "informazionii",
+			"description": "",
+			"item": [
+				{
+					"name": "Lista pronto soccorsi",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:5000/informazioni/pronto-soccorsi",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"informazioni",
+								"pronto-soccorsi"
+							]
+						},
+						"description": "Infromazioni pronto soccorsi"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ambulanze",
+			"description": "",
+			"item": [
+				{
+					"name": "Informazioni attesa ambulanza",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:5000/informazioni/attesa-ambulanza",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"informazioni",
+								"attesa-ambulanza"
+							]
+						}
+					},
+					"response": []
 				},
-				"description": "Istruzioni cosa fare in attensa di ambulanza"
-			},
-			"response": []
+				{
+					"name": "Lista richieste soccorso",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:5000/ambulanze/richieste_soccorso",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"ambulanze",
+								"richieste_soccorso"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }
