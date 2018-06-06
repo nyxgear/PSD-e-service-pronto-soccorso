@@ -88,6 +88,30 @@
 					"response": []
 				},
 				{
+					"name": "/richieste-soccorso",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:5000/pratiche",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"pratiche"
+							]
+						},
+						"description": "Istruzioni cosa fare in attensa di ambulanza"
+					},
+					"response": []
+				},
+				{
 					"name": "/richieste-soccorso/1/stato-ambulanza",
 					"request": {
 						"method": "GET",
