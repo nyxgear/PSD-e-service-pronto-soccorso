@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "abfddb61-fa42-4d64-8105-97a82ba73207",
+		"_postman_id": "41da4a37-3951-4199-9553-d6d3b96a18b8",
 		"name": "Stefano_requests",
 		"description": "Collection of request to the created API of e-Service Pronto Soccorso project.",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
@@ -8,10 +8,10 @@
 	"item": [
 		{
 			"name": "Login",
-			"description": "",
+			"description": null,
 			"item": [
 				{
-					"name": "Login Antonella",
+					"name": "auth/login  --- Antonella",
 					"request": {
 						"auth": {
 							"type": "noauth"
@@ -29,13 +29,11 @@
 								{
 									"key": "email",
 									"value": "antonella.sabatelli@mail.polimi.it",
-									"description": "",
 									"type": "text"
 								},
 								{
 									"key": "password",
 									"value": "antonella",
-									"description": "",
 									"type": "text"
 								}
 							]
@@ -56,7 +54,7 @@
 					"response": []
 				},
 				{
-					"name": "Login Stefano",
+					"name": "auth/login --- Stefano",
 					"request": {
 						"auth": {
 							"type": "noauth"
@@ -74,13 +72,11 @@
 								{
 									"key": "email",
 									"value": "stefano.cilloni@mail.polimi.it",
-									"description": "",
 									"type": "text"
 								},
 								{
 									"key": "password",
 									"value": "stefano",
-									"description": "",
 									"type": "text"
 								}
 							]
@@ -104,7 +100,7 @@
 		},
 		{
 			"name": "pratiche",
-			"description": "",
+			"description": null,
 			"item": [
 				{
 					"name": "pratiche",
@@ -114,7 +110,10 @@
 						},
 						"method": "GET",
 						"header": [],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "http://localhost:5000/pratiche",
 							"protocol": "http",
