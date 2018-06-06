@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
-from .tables.ambulanze import table
+from .tables.richieste import table
 
 
-class Ambulanza:
+class Richiesta:
     _table = table
 
     def __init__(self, rs_dict):
