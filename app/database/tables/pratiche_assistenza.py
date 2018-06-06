@@ -5,11 +5,15 @@ table = [
         'id': 1,
         'user_id': 1,
         'data': '12/03/2018',
-        'pronto_soccorso': 'Fatebenefratelli',
+        'pronto_soccorso': 'Niguarda',
         'codice_colore': 'verde',
-        'ticket': '156CBF',
-        'referto': 'None',
-        'ricetta': 'None'
+        'ticket': {
+            'id': '156CBF',
+            'titolo': 'Pagamento assistenza PS',
+            'download_url': 'https://cdn.ospedaleniguarda.it/downloads/156CBF.pdf'
+        },
+        'referto': {},
+        'ricetta': {}
     },
     {
         'id': 2,
@@ -27,8 +31,16 @@ table = [
         'data': '12/03/2018',
         'pronto_soccorso': 'Fatebenefratelli',
         'codice_colore': 'verde',
-        'ticket': '156CBF',
+        'ticket': {
+            'id': '156CBF',
+            'titolo': 'Pagamento assistenza PS',
+            'download_url': 'https://cdn.fatebenefratelli.it/downloads/156CBF.pdf'
+        },
         'referto': 'None',
-        'ricetta': '777AAA'
+        'ricetta': {
+            'id': '777AAA',
+            'titolo': 'Pagamento assistenza PS',
+            'download_url': 'https://cdn.cup.regione.lombardia.it/downloads/777AAA.pdf'
+        }
     }
 ]

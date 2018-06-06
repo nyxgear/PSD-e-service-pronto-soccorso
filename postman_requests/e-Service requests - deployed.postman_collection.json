@@ -1,0 +1,343 @@
+{
+	"info": {
+		"_postman_id": "76d97e30-65ff-42bf-bc6f-b1073197b70c",
+		"name": "e-Service requests - deployed",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"description": null,
+			"item": [
+				{
+					"name": "/auth/login  --- Antonella",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "antonella.sabatelli@mail.polimi.it",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "antonella",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://psd-e-service-pronto-soccorso.eu-gb.mybluemix.net/auth/login",
+							"protocol": "https",
+							"host": [
+								"psd-e-service-pronto-soccorso",
+								"eu-gb",
+								"mybluemix",
+								"net"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/auth/login --- Stefano",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "stefano.cilloni@mail.polimi.it",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "stefano",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://psd-e-service-pronto-soccorso.eu-gb.mybluemix.net/auth/login",
+							"protocol": "https",
+							"host": [
+								"psd-e-service-pronto-soccorso",
+								"eu-gb",
+								"mybluemix",
+								"net"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/auth/logout",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "stefano.cilloni@mail.polimi.it",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "stefano",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://psd-e-service-pronto-soccorso.eu-gb.mybluemix.net/auth/logout",
+							"protocol": "https",
+							"host": [
+								"psd-e-service-pronto-soccorso",
+								"eu-gb",
+								"mybluemix",
+								"net"
+							],
+							"path": [
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "informazioni",
+			"description": null,
+			"item": [
+				{
+					"name": "/informazioni/attesa-ambulanza",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://psd-e-service-pronto-soccorso.eu-gb.mybluemix.net/informazioni/attesa-ambulanza",
+							"protocol": "https",
+							"host": [
+								"psd-e-service-pronto-soccorso",
+								"eu-gb",
+								"mybluemix",
+								"net"
+							],
+							"path": [
+								"informazioni",
+								"attesa-ambulanza"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/informazioni/pronto-soccorsi",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://psd-e-service-pronto-soccorso.eu-gb.mybluemix.net/informazioni/pronto-soccorsi",
+							"protocol": "https",
+							"host": [
+								"psd-e-service-pronto-soccorso",
+								"eu-gb",
+								"mybluemix",
+								"net"
+							],
+							"path": [
+								"informazioni",
+								"pronto-soccorsi"
+							]
+						},
+						"description": "Infromazioni pronto soccorsi"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "richieste-soccorso",
+			"description": null,
+			"item": [
+				{
+					"name": "/richieste-soccorso",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://psd-e-service-pronto-soccorso.eu-gb.mybluemix.net/richieste-soccorso",
+							"protocol": "https",
+							"host": [
+								"psd-e-service-pronto-soccorso",
+								"eu-gb",
+								"mybluemix",
+								"net"
+							],
+							"path": [
+								"richieste-soccorso"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/richieste-soccorso",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "lat",
+									"value": "45.98765537",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "long",
+									"value": "9.765445678",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://psd-e-service-pronto-soccorso.eu-gb.mybluemix.net/richieste-soccorso",
+							"protocol": "https",
+							"host": [
+								"psd-e-service-pronto-soccorso",
+								"eu-gb",
+								"mybluemix",
+								"net"
+							],
+							"path": [
+								"richieste-soccorso"
+							]
+						},
+						"description": "Istruzioni cosa fare in attensa di ambulanza"
+					},
+					"response": []
+				},
+				{
+					"name": "/richieste-soccorso/1/stato-ambulanza",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://psd-e-service-pronto-soccorso.eu-gb.mybluemix.net/richieste-soccorso/1/stato-ambulanza",
+							"protocol": "https",
+							"host": [
+								"psd-e-service-pronto-soccorso",
+								"eu-gb",
+								"mybluemix",
+								"net"
+							],
+							"path": [
+								"richieste-soccorso",
+								"1",
+								"stato-ambulanza"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "pratiche",
+			"description": null,
+			"item": [
+				{
+					"name": "/pratiche",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://psd-e-service-pronto-soccorso.eu-gb.mybluemix.net/pratiche",
+							"protocol": "https",
+							"host": [
+								"psd-e-service-pronto-soccorso",
+								"eu-gb",
+								"mybluemix",
+								"net"
+							],
+							"path": [
+								"pratiche"
+							]
+						},
+						"description": "Istruzioni cosa fare in attensa di ambulanza"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
