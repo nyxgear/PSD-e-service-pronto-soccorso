@@ -11,7 +11,7 @@
 			"description": null,
 			"item": [
 				{
-					"name": "auth/login  --- Antonella",
+					"name": "/auth/login  --- Antonella",
 					"request": {
 						"auth": {
 							"type": "noauth"
@@ -54,7 +54,7 @@
 					"response": []
 				},
 				{
-					"name": "auth/login --- Stefano",
+					"name": "/auth/login --- Stefano",
 					"request": {
 						"auth": {
 							"type": "noauth"

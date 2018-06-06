@@ -1,47 +1,47 @@
 {
 	"info": {
-		"_postman_id": "033651c7-874e-4359-82fc-8c75a0bba709",
+		"_postman_id": "bc5c4f30-28da-497b-b4a7-fdb1bb7316bb",
 		"name": "Antonella_requests",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "pratiche",
-			"description": "",
+			"name": "informazioni",
+			"description": null,
 			"item": [
 				{
-					"name": "/pratiche",
+					"name": "/informazioni/attesa-ambulanza",
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
-							"raw": "http://localhost:5000/pratiche",
+							"raw": "http://localhost:5000/informazioni/attesa-ambulanza",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "5000",
 							"path": [
-								"pratiche"
+								"informazioni",
+								"attesa-ambulanza"
 							]
-						},
-						"description": "Istruzioni cosa fare in attensa di ambulanza"
+						}
 					},
 					"response": []
-				}
-			]
-		},
-		{
-			"name": "informazioni",
-			"description": "",
-			"item": [
+				},
 				{
 					"name": "/informazioni/pronto-soccorsi",
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "http://localhost:5000/informazioni/pronto-soccorsi",
 							"protocol": "http",
@@ -57,40 +57,45 @@
 						"description": "Infromazioni pronto soccorsi"
 					},
 					"response": []
-				},
+				}
+			]
+		},
+		{
+			"name": "richieste-soccorso",
+			"description": null,
+			"item": [
 				{
-					"name": "/informazioni/attesa-ambulanza",
+					"name": "/richieste-soccorso",
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
-							"raw": "http://localhost:5000/informazioni/attesa-ambulanza",
+							"raw": "http://localhost:5000/richieste-soccorso",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "5000",
 							"path": [
-								"informazioni",
-								"attesa-ambulanza"
+								"richieste-soccorso"
 							]
 						}
 					},
 					"response": []
-				}
-			]
-		},
-		{
-			"name": "ambulanze",
-			"description": "",
-			"item": [
+				},
 				{
-					"name": "richieste-soccorso/1/stato-ambulanza",
+					"name": "/richieste-soccorso/1/stato-ambulanza",
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "http://localhost:5000/richieste-soccorso/1/stato-ambulanza",
 							"protocol": "http",
@@ -106,24 +111,34 @@
 						}
 					},
 					"response": []
-				},
+				}
+			]
+		},
+		{
+			"name": "pratiche",
+			"description": null,
+			"item": [
 				{
-					"name": "/richieste-soccorso",
+					"name": "/pratiche",
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
-							"raw": "http://localhost:5000/richieste-soccorso",
+							"raw": "http://localhost:5000/pratiche",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "5000",
 							"path": [
-								"richieste-soccorso"
+								"pratiche"
 							]
-						}
+						},
+						"description": "Istruzioni cosa fare in attensa di ambulanza"
 					},
 					"response": []
 				}

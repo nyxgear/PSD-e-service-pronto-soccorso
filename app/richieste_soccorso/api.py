@@ -34,7 +34,6 @@ def stato_ambulanza(request_id):
     if current_user.get_id() != req.e_d.get('user_id'):
         abort(401, 'Accesso negato')
 
-
     if req is None:
         abort(404, 'Richiesta non trovata')
 
