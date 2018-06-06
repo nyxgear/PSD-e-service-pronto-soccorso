@@ -75,8 +75,10 @@ def stato_ambulanza(request_id):
     ga_response = es_ga.stato_ambulanza(es_ga_id)
 
     if ga_response['status'] == 'SUCCESS':
-        # remove the id of gestione ambulanze service
         return jsonify(status='SUCCESS', informazioni_ambulanza=ga_response['result'])
+
+    if ga_response['status'] == 'ERROR' and ga_response['type'] == 'NO AMBULANZA':
+        return jsonify(ga_response)
 
     print(ga_response)
     abort(500, 'Errore di comunicazione con il sistema di gestione ambulanze')

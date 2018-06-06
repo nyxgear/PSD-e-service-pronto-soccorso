@@ -1,10 +1,145 @@
 {
 	"info": {
 		"_postman_id": "bc5c4f30-28da-497b-b4a7-fdb1bb7316bb",
-		"name": "Antonella_requests",
+		"name": "e-Service requests",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
+		{
+			"name": "auth",
+			"description": null,
+			"item": [
+				{
+					"name": "/auth/login  --- Antonella",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "antonella.sabatelli@mail.polimi.it",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "antonella",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5000/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/auth/login --- Stefano",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "stefano.cilloni@mail.polimi.it",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "stefano",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5000/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/auth/logout",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "stefano.cilloni@mail.polimi.it",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "stefano",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5000/auth/logout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
 		{
 			"name": "informazioni",
 			"description": null,
@@ -91,20 +226,38 @@
 					"name": "/richieste-soccorso",
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
 						"body": {
-							"mode": "raw",
-							"raw": ""
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "lat",
+									"value": "45.98765537",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "long",
+									"value": "9.765445678",
+									"description": "",
+									"type": "text"
+								}
+							]
 						},
 						"url": {
-							"raw": "http://localhost:5000/pratiche",
+							"raw": "http://localhost:5000/richieste-soccorso",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "5000",
 							"path": [
-								"pratiche"
+								"richieste-soccorso"
 							]
 						},
 						"description": "Istruzioni cosa fare in attensa di ambulanza"
