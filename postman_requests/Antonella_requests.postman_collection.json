@@ -10,21 +10,20 @@
 			"description": "",
 			"item": [
 				{
-					"name": "Lista pratiche assistenza",
+					"name": "/pratiche",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"body": {},
 						"url": {
-							"raw": "http://localhost:5000/informazioni/pratiche-assistenza",
+							"raw": "http://localhost:5000/pratiche",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "5000",
 							"path": [
-								"informazioni",
-								"pratiche-assistenza"
+								"pratiche"
 							]
 						},
 						"description": "Istruzioni cosa fare in attensa di ambulanza"
@@ -34,11 +33,11 @@
 			]
 		},
 		{
-			"name": "informazionii",
+			"name": "informazioni",
 			"description": "",
 			"item": [
 				{
-					"name": "Lista pronto soccorsi",
+					"name": "/informazioni/pronto-soccorsi",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -58,15 +57,9 @@
 						"description": "Infromazioni pronto soccorsi"
 					},
 					"response": []
-				}
-			]
-		},
-		{
-			"name": "ambulanze",
-			"description": "",
-			"item": [
+				},
 				{
-					"name": "Informazioni attesa ambulanza",
+					"name": "/informazioni/attesa-ambulanza",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -85,23 +78,50 @@
 						}
 					},
 					"response": []
-				},
+				}
+			]
+		},
+		{
+			"name": "ambulanze",
+			"description": "",
+			"item": [
 				{
-					"name": "Lista richieste soccorso",
+					"name": "richieste-soccorso/1/stato-ambulanza",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"body": {},
 						"url": {
-							"raw": "http://localhost:5000/ambulanze/richieste_soccorso",
+							"raw": "http://localhost:5000/richieste-soccorso/1/stato-ambulanza",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "5000",
 							"path": [
-								"ambulanze",
-								"richieste_soccorso"
+								"richieste-soccorso",
+								"1",
+								"stato-ambulanza"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/richieste-soccorso",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:5000/richieste-soccorso",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"richieste-soccorso"
 							]
 						}
 					},

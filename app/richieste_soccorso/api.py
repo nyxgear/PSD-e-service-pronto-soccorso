@@ -7,6 +7,7 @@ import database as db
 from flask_login import login_required, current_user
 
 import es_gestione_ambulanze.api as ga_api
+import es_gestione_ambulanze as ga
 
 bp = Blueprint('richieste-soccorso', __name__)
 
@@ -40,6 +41,9 @@ def stato_ambulanza(request_id):
     # for c in db.get_list(db.Ambulanza, 'user_id', current_user.get_id()):
     #    sa_list.append(c.to_dict())
 
-    ga_api.stato_ambulanza(1)
+    #ga_api.stato_ambulanza(1)
+    sa=[]
+    for c in ga.get(ga.Ambulanza, 'id', request_id):
+        rs.append(c.to_dict())
 
-    return jsonify(results='ok')
+    return jsonify(results=sa)
