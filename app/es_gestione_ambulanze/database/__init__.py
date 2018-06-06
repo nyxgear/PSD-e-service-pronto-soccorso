@@ -37,7 +37,7 @@ def get_list(entity_class, attribute_name=None, attribute_value=None):
         else:
             value = x.get(attribute_name)
 
-            if value == attribute_value:
+            if str(value) == str(attribute_value):
                 res.append(entity_class(x))
 
     return res
