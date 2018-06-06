@@ -12,9 +12,6 @@ bp = Blueprint('richieste-soccorso', __name__)
 @bp.route('/', methods=['GET'])
 @login_required
 def richieste_soccorso():
-    # pa_list = [c.to_dict() for c in
-    #            db.get_list(db.PraticaAssistenza, 'user_id', 1)]
-
     rs = []
     for c in db.get_list(db.RichiestaSoccorso, 'user_id', current_user.get_id()):
         rs.append(c.to_dict())
@@ -34,6 +31,10 @@ def richiesta_soccorso():
 def stato_ambulanza(request_id):
     req = db.get(db.RichiestaSoccorso, 'id', request_id)
 
+    if current_user.get_id() != req.e_d.get('user_id'):
+        abort(401, 'Accesso negato')
+
+
     if req is None:
         abort(404, 'Richiesta non trovata')
 
@@ -45,7 +46,6 @@ def stato_ambulanza(request_id):
 
     if ga_response['status'] == 'SUCCESS':
         # remove the id of gestione amulanze service
-        del(ga_response['result']['id'])
         return jsonify(status='SUCCESS', informazioni_ambulanza=ga_response['result'])
 
     print(ga_response)
