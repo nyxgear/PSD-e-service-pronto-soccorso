@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from .ambulanza import Ambulanza
+from .richiesta import Richiesta
 
 
 def get(entity_class, attribute_name, attribute_value):

@@ -2,17 +2,17 @@
 
 table = [
     {
-        'id_': 100,
+        'id': 100,
         'albulanza_associata': True,
         'ambulanza_id': 500
     },
     {
-        'id_': 101,
+        'id': 101,
         'albulanza_associata': False,
         'ambulanza_id': None
     },
     {
-        'id_': 102,
+        'id': 102,
         'albulanza_associata': True,
         'ambulanza_id': 501
     }

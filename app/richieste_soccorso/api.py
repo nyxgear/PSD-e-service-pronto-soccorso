@@ -1,13 +1,10 @@
 # -*- coding: utf-8 -*-
 
-import flask
-from flask import jsonify
+from flask import jsonify, abort
 from flask.blueprints import Blueprint
 import database as db
 from flask_login import login_required, current_user
-
-import es_gestione_ambulanze.api as ga_api
-import es_gestione_ambulanze as ga
+import es_gestione_ambulanze as es_ga
 
 bp = Blueprint('richieste-soccorso', __name__)
 
@@ -24,6 +21,7 @@ def richieste_soccorso():
 
     return jsonify(results=rs)
 
+
 @bp.route('/', methods=['POST'])
 @login_required
 def richiesta_soccorso():
@@ -34,16 +32,10 @@ def richiesta_soccorso():
 @bp.route('/<int:request_id>/stato-ambulanza', methods=['GET'])
 @login_required
 def stato_ambulanza(request_id):
-    # # pa_list = [c.to_dict() for c in
-    # #            db.get_list(db.PraticaAssistenza, 'user_id', 1)]
-    #
-    # sa_list = []
-    # for c in db.get_list(db.Ambulanza, 'user_id', current_user.get_id()):
-    #    sa_list.append(c.to_dict())
-
-    #ga_api.stato_ambulanza(1)
-    sa=[]
-    for c in ga.get(ga.Ambulanza, 'id', request_id):
-        rs.append(c.to_dict())
-
+    req = db.get(db.RichiestaSoccorso, 'id', request_id)
+    print(req.to_dict())
+    if req is None:
+        abort(404, 'Richiesta non trovata')
+    sa = es_ga.stato_ambulanza(req.e_d['gestione_ambulanze_richiesta_id'])
+    print(sa.to_dict())
     return jsonify(results=sa)
