@@ -33,9 +33,20 @@ def richiesta_soccorso():
 @login_required
 def stato_ambulanza(request_id):
     req = db.get(db.RichiestaSoccorso, 'id', request_id)
-    print(req.to_dict())
+
     if req is None:
         abort(404, 'Richiesta non trovata')
-    sa = es_ga.stato_ambulanza(req.e_d['gestione_ambulanze_richiesta_id'])
-    print(sa.to_dict())
-    return jsonify(results=sa)
+
+    es_ga_id = req.e_d['gestione_ambulanze_richiesta_id']
+
+    # let's call the external service
+
+    ga_response = es_ga.stato_ambulanza(es_ga_id)
+
+    if ga_response['status'] == 'SUCCESS':
+        # remove the id of gestione amulanze service
+        del(ga_response['result']['id'])
+        return jsonify(status='SUCCESS', informazioni_ambulanza=ga_response['result'])
+
+    print(ga_response)
+    abort(500, 'Errore di comunicazione con il sistema di gestione ambulanze')
